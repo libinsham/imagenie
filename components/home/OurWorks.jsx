@@ -17,34 +17,45 @@ const FILTERS = [
 const PROJECTS = [
   {
     title: "Spatial Flow",
-    imageKey: "spatialFlow",
+    imageKey: "featured",
     tags: ["Branding", "Identity"],
-    span: "md:col-span-2",
-    gradient: "linear-gradient(135deg,#FF4D2E,#FF9600 60%,#FFD9A0)",
+    featured: true,
   },
-  {
-    title: "Northline Studio",
-    imageKey: "northlineStudio",
-    tags: ["Mockup"],
-    gradient: "linear-gradient(135deg,#2b2b2b,#5a5a5a)",
-  },
+
   {
     title: "Warmhaus Interiors",
-    imageKey: "warmhausInteriors",
+    imageKey: "project1",
     tags: ["Creative"],
-    gradient: "linear-gradient(135deg,#E8DFD3,#C9B896)",
   },
+
   {
-    title: "Ohio Journal",
-    imageKey: "ohioJournal",
+    title: "Ohio Mobile",
+    imageKey: "project2",
     tags: ["Apps"],
-    gradient: "linear-gradient(135deg,#D8D8D8,#ABABAB)",
   },
+
   {
-    title: "Ledger & Co.",
-    imageKey: "ledgerCo",
+    title: "Credit Card UI",
+    imageKey: "project3",
     tags: ["Identity"],
-    gradient: "linear-gradient(135deg,#FFC9B0,#FF9F73)",
+  },
+
+  {
+    title: "Brand Guidelines",
+    imageKey: "project4",
+    tags: ["Branding"],
+  },
+
+  {
+    title: "Creative Mockup",
+    imageKey: "project5",
+    tags: ["Mockup"],
+  },
+
+  {
+    title: "Magazine Identity",
+    imageKey: "project6",
+    tags: ["Identity"],
   },
 ];
 
