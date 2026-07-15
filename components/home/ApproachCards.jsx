@@ -93,7 +93,7 @@ export default function ApproachCards() {
           imageSrc={siteImages.approach.b2bPhoto}
           imageAlt="B2B client meeting"
           photoFallbackGradient="linear-gradient(135deg, #4B4239, #241E1A)"
-          doorBgClass="bg-ink"
+          doorBgClass="bg-black/80"
           doorTextColorClass="text-white"
           slideDirectionClass="group-hover:-translate-x-full"
           ctaTextColorClass="text-white"
@@ -108,7 +108,7 @@ export default function ApproachCards() {
           imageSrc={siteImages.approach.b2cPhoto}
           imageAlt="B2C shopper"
           photoFallbackGradient="linear-gradient(135deg, #241E1A, #0F0D0C)"
-          doorBgClass="bg-ink"
+          doorBgClass="bg-ink/90"
           doorTextColorClass="text-white"
           slideDirectionClass="group-hover:translate-x-full"
           ctaTextColorClass="text-white"
