@@ -17,7 +17,7 @@ import "swiper/css";
 const SLIDES = [
   {
     tag: "Strategy, UI/UX",
-    title: "AWS Non-Profit Cloud Solutions",
+    title: " GO -to- Market Strategy",
     description:
       "A global brand entrusted us with a unique challenge: crafting an internal tool to share its brand story with every employee, from onboarding to leadership.",
     imageKey: "slide1",

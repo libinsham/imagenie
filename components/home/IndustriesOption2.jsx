@@ -224,6 +224,81 @@ export default function IndustriesOption2() {
         >
           <div className="absolute inset-0 rounded-full border border-dashed border-orange/25" />
 
+          {/* ================= CURVED NETWORK ================= */}
+
+<svg
+  className="absolute inset-0 w-full h-full pointer-events-none"
+  viewBox="0 0 560 560"
+>
+
+  {/* TOP */}
+
+  <path
+    d="M280 280 Q250 170 280 40"
+    stroke="#D8D8D8"
+    strokeWidth="2"
+    fill="none"
+  />
+
+  <circle cx="265" cy="160" r="6" fill="#FF6A00"/>
+
+  {/* TOP RIGHT */}
+
+  <path
+    d="M280 280 Q360 200 488 160"
+    stroke="#D8D8D8"
+    strokeWidth="2"
+    fill="none"
+  />
+
+  <circle cx="385" cy="205" r="6" fill="#FF6A00"/>
+
+  {/* BOTTOM RIGHT */}
+
+  <path
+    d="M280 280 Q370 360 488 400"
+    stroke="#D8D8D8"
+    strokeWidth="2"
+    fill="none"
+  />
+
+  <circle cx="390" cy="355" r="6" fill="#FF6A00"/>
+
+  {/* BOTTOM */}
+
+  <path
+    d="M280 280 Q300 390 280 520"
+    stroke="#D8D8D8"
+    strokeWidth="2"
+    fill="none"
+  />
+
+  <circle cx="290" cy="405" r="6" fill="#FF6A00"/>
+
+  {/* BOTTOM LEFT */}
+
+  <path
+    d="M280 280 Q170 360 72 400"
+    stroke="#D8D8D8"
+    strokeWidth="2"
+    fill="none"
+  />
+
+  <circle cx="165" cy="355" r="6" fill="#FF6A00"/>
+
+  {/* TOP LEFT */}
+
+  <path
+    d="M280 280 Q180 200 72 160"
+    stroke="#D8D8D8"
+    strokeWidth="2"
+    fill="none"
+  />
+
+  <circle cx="170" cy="205" r="6" fill="#FF6A00"/>
+
+</svg>
+
           <CenterCircle active={active} onBack={() => setActiveIndex(null)} />
 
           {CATEGORIES.map((cat, i) => {

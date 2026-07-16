@@ -76,7 +76,7 @@ export default function AnimatedLogo({
 
       idleTl.current = gsap.timeline({ repeat: -1, delay: 0.8 });
       idleTl.current
-        .to([...letters, gRef.current], {
+        .to(letters, {
           keyframes: [
             { y: -10, scaleX: 0.9, scaleY: 1.15, duration: 0.22, ease: "power2.out" }, // stretch up
             { y: 0, scaleX: 1.18, scaleY: 0.85, duration: 0.16, ease: "power1.in" },    // squash landing
@@ -85,8 +85,9 @@ export default function AnimatedLogo({
           stagger: 0.09,
         }, 0)
         .to(gRef.current, {
+          scale: 1.15,
           filter: "drop-shadow(0 0 6px rgba(245,128,32,0.65))",
-          duration: 1.4,
+          duration: 1.1,
           yoyo: true,
           repeat: 1,
           ease: "sine.inOut",
@@ -115,19 +116,21 @@ export default function AnimatedLogo({
           }, 0)
           .to(gRef.current, {
             scale: 1.1,
+            rotation: 360,
+            transformOrigin: "center",
             filter: "drop-shadow(0 0 12px rgba(245,128,32,0.9))",
-            duration: 0.5,
-            yoyo: true,
-            repeat: 1,
-            ease: "sine.inOut",
+            duration: 0.6,
+            ease: "power2.inOut",
           }, 0);
       };
       const handleLeave = () => {
         hoverTl.current?.kill();
         gsap.to([...letters, ...tagline, gRef.current], {
           y: 0,
+          rotation: 0,
           scaleX: 1,
           scaleY: 1,
+          scale: 1,
           filter: "none",
           duration: 0.35,
           ease: "power2.out",
@@ -152,7 +155,7 @@ export default function AnimatedLogo({
   return (
     <svg
       ref={svgRef}
-      viewBox={showTagline ? "0 0 527.44 110.1" : "0 0 527.44 80"}
+      viewBox={showTagline ? "0 -70 580 110.1" : "0 0 570 110"}
       className={className}
       role="img"
       aria-label="Imagenie — Designing Desires"
@@ -166,6 +169,19 @@ export default function AnimatedLogo({
           <path ref={(el) => (letterRefs.current[5] = el)} className="logo-letter" d="M431.95,10.47v1.08h-1.81c-3.2,0-5.82,2.39-6.01,5.41v46.07c0,6.96,1.02,13.78,1.02,13.78h-1.03l-56.19-53.31v45.07c.06,3.13,2.73,5.65,6.01,5.65h1.8v1.08s-20.41,0-20.41,0v-1.08h1.81c3.29,0,5.95-2.52,6.01-5.65V22.36c0-7.37-1.04-13.5-1.04-13.5l1.16.05,56.06,52.84V16.95c-.19-3.01-2.81-5.4-6.01-5.4h-1.8v-1.08s20.39,0,20.39,0h.01Z" />
           <path ref={(el) => (letterRefs.current[6] = el)} className="logo-letter" d="M517.31,75.3h-43.89l.02-1.08h1.48c3.49,0,6.1-2.55,6.24-5.74V17.21c0-3.22-2.73-5.66-6.24-5.66h-1.48l-.02-1.08h31.56c4.34-.03,10.19-.96,12.07-1.7v12.23h-1.17v-1.68c0-3.03-2.13-5.49-5.41-5.55h-22.4v27.48h18.45c3-.06,4.38-2.09,4.38-4.59v-1.37h1.17s0,15.16,0,15.16h-1.17v-1.39c0-2.42-1.3-4.41-4.13-4.58h-18.71v27.48h16.89c10.38-.14,14.08-5.2,17.15-12.2h1.17l-5.95,15.5h-.01Z" />
       </g>
+
+      {/* Registered trademark mark — deliberately NOT in letterRefs, so it
+          stays static (doesn't bounce/rotate) while everything else
+          animates, matching how ® marks behave in real brand usage. */}
+      <text
+        x="533"
+        y="16"
+        fontSize="32"
+        fontFamily="Arial, sans-serif"
+        style={{ fill: inkFill }}
+      >
+        ®
+      </text>
       <path ref={gRef} d="M295.38,42.54v1.08h-1.47c-3.16,0-4.94,1.52-4.92,4.28,0,2.49-.14,5.03,0,7.5.5,8.39-6.3,13.39-13,17.04-5.05,2.76-10.76,4.18-16.51,4.18s-11.37-1.31-17-4.03c-9.66-4.67-18.61-10.56-27.27-16.27-5.11-3.37-10.4-6.86-15.8-10.07-9.24-5.5-21.64-4.57-31.74,2.17l-5.78-.26c17.71-11.76,27.16-12.5,40.34-6.67,5.86,2.59,10.85,6.79,16.01,10.2,2.66,1.75,5.25,3.45,7.86,5.13-2.17-4.58-3.33-9.91-3.33-15.92,0-21.03,14.11-33.92,35.41-33.92,9.95,0,17.93,2.09,25.22,6.54l2.37,15.26h-.94c-3.14-12.62-11.64-18.56-26.75-18.56-16.5,0-27.5,11.66-27.5,30.69,0,10.53,3.42,18.84,9.32,24.15,1.64.88,3.28,1.73,4.98,2.55,12.25,5.92,26.57,3.91,36.09-5.99,2.44-2.55,2.06-7.79,1.68-11.03-.38-3.22-1.71-6.96-5.54-6.96h-1.54v-1.08h19.81Z" fill="#F58020" />
       {showTagline && (
         <>

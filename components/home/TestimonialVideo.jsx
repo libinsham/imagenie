@@ -6,7 +6,6 @@ import VideoModal from "@/components/shared/VideoModal";
 
 export default function TestimonialVideo() {
   const [videoOpen, setVideoOpen] = useState(false);
-  const [videoReady, setVideoReady] = useState(false);
 
   return (
     <>
@@ -21,7 +20,6 @@ export default function TestimonialVideo() {
             loop
             playsInline
             preload="auto"
-            onCanPlay={() => setVideoReady(true)}
           >
             <source src="/videos/video1.mp4" type="video/mp4" />
           </video>
@@ -45,47 +43,52 @@ export default function TestimonialVideo() {
   </p>
 </div>
 
+
+
           {/* Animated Play Button */}
-          {videoReady && (
-            <button
-              onClick={() => setVideoOpen(true)}
-              className="absolute left-1/2 top-1/2
-                         -translate-x-1/2
-                         -translate-y-1/2
-                         z-30"
-              aria-label="Play Video"
-            >
-              <div className="relative">
+{/* Animated Play Button */}
 
-                {/* Ripple Animation */}
-                <span className="absolute inset-0 rounded-full bg-orange/30 animate-ping"></span>
 
-                <div
-                  className="
-                  relative
-                  w-24
-                  h-24
-                  rounded-full
-                  bg-black
-                  border-2
-                  border-orange
-                  flex
-                  items-center
-                  justify-center
-                  shadow-2xl
-                  hover:scale-110
-                  transition-all
-                  duration-300
-                "
-                >
-                  <Play
-                    size={34}
-                    className="text-orange fill-orange ml-1"
-                  />
-                </div>
-              </div>
-            </button>
-          )}
+
+{/* Animated Play Button */}
+<button
+  onClick={() => setVideoOpen(true)}
+  className="absolute left-1/2 top-1/2
+             -translate-x-1/2
+             -translate-y-1/2
+             z-30"
+  aria-label="Play Video"
+>
+  <div className="relative">
+    {/* Ripple */}
+    <span className="absolute inset-0 rounded-full bg-orange/30 animate-ping"></span>
+
+    <div
+      className="
+        relative
+        w-24
+        h-24
+        rounded-full
+        bg-black/80
+        border-2
+        border-orange
+        flex
+        items-center
+        justify-center
+        shadow-2xl
+        hover:scale-110
+        transition-all
+        duration-300
+      "
+    >
+      <Play
+        size={34}
+        className="text-orange fill-orange ml-1"
+      />
+    </div>
+  </div>
+</button>
+
 
           {/* Bottom Left Card */}
           <div className="absolute bottom-6 left-6 md:left-10 bg-white/95 backdrop-blur rounded-2xl px-6 py-4 z-20 shadow-xl">
