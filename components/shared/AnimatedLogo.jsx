@@ -1,6 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+
+import { useEffect, useState, useRef, useLayoutEffect } from "react";
+
 import gsap from "gsap";
 
 /**
@@ -155,8 +157,9 @@ export default function AnimatedLogo({
   return (
     <svg
       ref={svgRef}
-      viewBox={showTagline ? "0 -70 580 110.1" : "0 0 570 110"}
+      viewBox={showTagline ? "0 0 570 110.1" : "0 0 570 80"}
       className={className}
+      style={{ overflow: "visible" }}
       role="img"
       aria-label="Imagenie — Designing Desires"
     >
@@ -174,9 +177,9 @@ export default function AnimatedLogo({
           stays static (doesn't bounce/rotate) while everything else
           animates, matching how ® marks behave in real brand usage. */}
       <text
-        x="533"
-        y="16"
-        fontSize="32"
+        x="528"
+        y="18"
+        fontSize="13"
         fontFamily="Arial, sans-serif"
         style={{ fill: inkFill }}
       >
